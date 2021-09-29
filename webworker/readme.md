@@ -1,0 +1,1 @@
+POC for using workerize loader in webpack

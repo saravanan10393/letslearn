@@ -1,0 +1,11 @@
+<html>
+  <head>
+   
+  </head>
+  <body background="#eee">
+    <div id="root"></div>  
+    <% for (key in htmlWebpackPlugin.files.js) { %>
+      <script src="<%= htmlWebpackPlugin.files.js[key] %>"></script>
+    <% } %>
+  </body>
+</html>
