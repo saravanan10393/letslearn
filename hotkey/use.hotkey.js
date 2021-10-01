@@ -1,16 +1,16 @@
-import React from "react";
+import { createRef, useEffect } from "react";
 import { install, uninstall } from "@github/hotkey";
 
 
 export function useHotkey(keybinding = "", options = { scope: "" }) {
-  const elementRef = React.createRef(null);
+  const elementRef = createRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log(" react effect at hotkey ");
     if(!elementRef.current || !elementRef.current instanceof HTMLElement) return () => {};
 
     if(options.scope) {
-      elementRef.current?.setData("hotkeyScope", options.scope)
+      elementRef.current.dataset.hotkeyScope = options.scope
     }
     install(elementRef.current, keybinding);
 
